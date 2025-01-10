@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to bottom, #ffcccc, #ffe6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.page {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    animation: fadeIn 2s ease;
+}
+
+.page.active {
+    display: flex;
+}
+
+  
+button {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+button:hover {
+    background-color: #ff1493;
+    transform: scale(1.1);
+}
+h1 {
+    font-size: 3em;
+    color: #ff3366;
+}
+p {
+    font-size: 1.5em;
+    color: #4d4d4d;
+}
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.confetti {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall 3s infinite ease-in;
+}
+.confetti:nth-child(odd) {
+    background-image: url('melody1.png'); /* Melody Sanrio image 1 */
+}
+.confetti:nth-child(even) {
+    background-image: url('melody2.png'); /* Melody Sanrio image 2 */
+}
+@keyframes fall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+.bubble {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 182, 193, 0.6);
+    border-radius: 50%;
+    animation: float 4s infinite ease-in-out;
+    pointer-events: none;
+}
+@keyframes float {
+    0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Photo grid styling */
+#photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+#photos-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Video popup styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.popup-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff3366;
+    transition: color 0.3s;
+}
+.close-btn:hover {
+    color: #ff69b4;
+}
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}

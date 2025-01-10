@@ -1,0 +1,48 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+    <!-- Page 1: secret -->
+    <div id="page1" class="page active">
+        <h1>Cậu ơi... cho cậu xem cái này nek:</h1>
+        <p>Nhập mk để xem: cu t dài bao nh cm???</p>
+        <input id="password" type="text" placeholder="? cm" />
+        <button onclick="checkPassword()">Mở khóa</button>
+        <p id="error-message" class="error-message"></p>
+        <div id="melody-confetti-container"></div>
+    </div>
+    <!-- Page 2: Showcase -->
+    <div id="page2" class="page">
+        <h1>From the Heart</h1>
+        <p>Every moment with you feels magical. You light up my world, and today, I want to celebrate you. You’re my everything, and I can’t imagine life without you.</p>
+        <div id="photos-container"></div>
+        <div id="bubble-container"></div>
+        <button onclick="goToPage(3)">Let’s Continue</button>
+       
+    </div>
+    <!-- Page 3: video -->
+    <div id="page3" class="page">
+        <h1>Happy Birthday, My Love!</h1>
+        <p>You are the best thing that ever happened to me. Here’s to celebrating you today and always!</p>
+        <div id="confetti-container"></div>
+        <button onclick="showVideo()">Click here....</button>
+        <div id="video-popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closeVideo()">&times;</span>
+                <video id="birthday-video" controls>
+                    <source src="birthday.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div id = "confetti-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
